@@ -45,6 +45,15 @@
   <div class="starter-template text-center">
     <h1>Page 2</h1>
     <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+
+    <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Weight</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
   </div>
 
 </main><!-- /.container -->
