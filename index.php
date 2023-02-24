@@ -46,7 +46,7 @@ $statement->closeCursor();
               <a class="nav-link" aria-current="page" href="page-2.php">Page 2</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="page-3.php">Page 3</a>
+              <a class="nav-link" aria-current="page" href="contact-form.php">Page 3</a>
             </li>
           </ul>
         </span>
