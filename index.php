@@ -2,7 +2,7 @@
 require_once('database.php');
 
 // Get products
-$queryProducts = 'SELECT * FROM products';
+$queryProducts = 'SELECT * FROM player';
 $statement = $db->prepare($queryProducts);
 $statement->execute();
 $products = $statement->fetchAll();
@@ -40,7 +40,7 @@ $statement->closeCursor();
         <span class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="page-1.php">Page 1</a>
+              <a class="nav-link" aria-current="page" href="add.php">Page 1</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="page-2.php">Page 2</a>
@@ -62,30 +62,30 @@ $statement->closeCursor();
 
       <table>
         <tr>
-          <th>Code</th>
+          <th>ID</th>
           <th>Name</th>
-          <th>Weight</th>
-          <th>Stock</th>
-          <th>Price</th>
+          <th>DOB</th>
+          <th>Position</th>
+          <th>Draft year</th>
           <th>Delete</th>
         </tr>
 
         <?php foreach ($products as $product): ?>
           <tr>
             <td>
-              <?php echo $product['productCode']; ?>
+              <?php echo $product['playerID']; ?>
             </td>
             <td>
-              <?php echo $product['productName']; ?>
+              <?php echo $product['player_name']; ?>
             </td>
             <td>
-              <?php echo $product['weight']; ?>
+              <?php echo $product['player_birth_date']; ?>
             </td>
             <td>
-              <?php echo $product['stock']; ?>
+              <?php echo $product['position']; ?>
             </td>
             <td class="right">
-              <?php echo $product['listPrice']; ?>
+              <?php echo $product['player_draft_year']; ?>
             </td>
             <td>
               <form action="delete_product.php" method="post">
