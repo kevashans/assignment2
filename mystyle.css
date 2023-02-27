@@ -1,1 +1,50 @@
 /* Add your own CSS under here */
+.carousel-item img {
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+    max-height: 50vh;
+    height: 50vh;
+    width: 100%;;
+}
+
+body {
+    /* margin-top: 100px;
+    color: green; */
+    /* background-color: grey; */
+}
+
+.test {
+    color: red;
+    background-color: black;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
+.my-caption{
+    
+    margin-left: 300px;
+    margin-top: -150px;
+    text-align: center;
+    text-justify: center;
+    color: red;
+    
+}
+.carousel-caption{
+    color: green;
+    margin-top: -1120px;
+    margin-left: -120px;
+}
+/* h5{
+    color: green;
+} */
+.carousel{
+    background-color: white;
+    color: black;
+}
