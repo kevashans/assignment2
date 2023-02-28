@@ -1,5 +1,7 @@
+
 <?php
 require_once('database.php');
+// echo '<script type="text/javascript">jsFunction();</script>';
 
 // Get products
 $queryProducts = 'SELECT * FROM team';
@@ -22,6 +24,7 @@ $statement->closeCursor();
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="mystyle.css" rel="stylesheet">
+  <script type="text/javascript" src="./js/myFunctions.js"></script>
 </head>
 
 <body>
@@ -40,13 +43,13 @@ $statement->closeCursor();
         <span class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="add.php">Page 1</a>
+              <a class="nav-link" aria-current="page" href="players-page.php">Players</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="page-2.php">Page 2</a>
+              <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact-form.php">Page 3</a>
+              <a class="nav-link" aria-current="page" href="contact-form.php">Contact-form</a>
             </li>
           </ul>
         </span>
@@ -54,7 +57,7 @@ $statement->closeCursor();
     </div>
   </nav>
 
-  <main class="container">
+  <main class="container mt-5">
     <div class="starter-template text-center">
 
 
@@ -64,10 +67,14 @@ $statement->closeCursor();
         <?php foreach ($products as $product): ?>
           <div class="col">
             <div class="card">
-              <img src="..." class="card-img-top" alt="...">
+              <img src="<?php echo $product["picture_url"] ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"> <?php echo $product['team_name']; ?></h5>
-                <p class="card-text"> <?php echo $product['team_salary']; ?></p>
+                <h5 class="card-title">
+                  <a href="#" onclick="ContentPage('<?php echo $product['teamID']?>'); return false" value='<?php echo $product["teamID"] ?>' class="stretched-link"><?php echo $product['team_name']; ?></a>
+                </h5>
+                <p class="card-text">
+                  <?php echo $product['team_salary']; ?>
+                </p>
               </div>
             </div>
           </div>

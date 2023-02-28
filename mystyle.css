@@ -15,7 +15,7 @@ body {
 }
 
 .test {
-    color: red;
+    color: blue;
     background-color: black;
 }
 
@@ -47,4 +47,9 @@ body {
 .carousel{
     background-color: white;
     color: black;
+}
+.card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
 }

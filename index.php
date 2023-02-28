@@ -45,13 +45,13 @@ $statement->closeCursor();
         <span class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="players-page.php">Page 1</a>
+              <a class="nav-link" aria-current="page" href="players-page.php">Players</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="teams-page.php">Page 2</a>
+              <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact-form.php">Page 3</a>
+              <a class="nav-link" aria-current="page" href="contact-form.php">Contact-form</a>
             </li>
           </ul>
         </span>
@@ -75,7 +75,7 @@ $statement->closeCursor();
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide col-6" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
