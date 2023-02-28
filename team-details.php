@@ -6,10 +6,14 @@ require_once('database.php');
 $id = $_GET['id'];
 // Get products
 // $queryProducts = "SELECT * FROM team_played_for WHERE teamID like '$id' ";
-$queryProducts = "SELECT * FROM  player ,team_played_for  WHERE  player.playerID = team_played_for.playerID and teamID like '$id'";
+$queryProducts = "SELECT * FROM  player ,team_played_for  WHERE  player.playerID = team_played_for.playerID and teamID like '$id' ";
+$queryScouts = "SELECT * FROM scout ,team_worked_for WHERE scout.scoutID = team_worked_for.scoutID and teamID like '$id'";
 $statement = $db->prepare($queryProducts);
+$statement2 = $db->prepare($queryScouts);
 $statement->execute();
+$statement2->execute();
 $products = $statement->fetchAll();
+$scouts = $statement2->fetchAll();
 $statement->closeCursor();
 ?>
 <!doctype html>
@@ -61,10 +65,19 @@ $statement->closeCursor();
 
     <main class="container mt-5">
         <h1 class='text-center'>
-        <?=$id?>
+            <?= $id ?>
         </h1>
-        
-        <div class="starter-template text-center">
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                Players
+            </button>
+        </p>
+
+
+        <!-- players for loop -->
+
+        <div class="collapse" id="collapseExample">
             <div class="row row-cols-1 row-cols-md-2 g-4">
 
 
@@ -79,6 +92,39 @@ $statement->closeCursor();
                                 <p class="card-text">
                                     <?php echo $product['contract_start_year']; ?> -
                                     <?php echo $product['contract_end_year']; ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+
+            </div>
+        </div>
+
+        <!-- collapse button for scouts -->
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
+                aria-expanded="false" aria-controls="collapseExample">
+                Scouts
+            </button>
+        </p>
+
+         <!-- scouts for loop -->
+        <div class="collapse" id="collapseExample2">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+
+
+                <?php foreach ($scouts as $scout): ?>
+                    <div class="col">
+                        <div class="card">
+                            <!-- <img src="" class="card-img-top" alt="..."> -->
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php echo $scout["scout_name"] ?>
+                                </h5>
+                                <p class="card-text">
+                                    <?php echo $scout['work_start_year']; ?> -
+                                    <?php echo $scout['work_end_year']; ?>
                                 </p>
                             </div>
                         </div>
