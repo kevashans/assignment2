@@ -1,20 +1,25 @@
 <?php
 require_once('database.php');
+// require_once('getScoutName.php');
+
+// require_once('team-details.php');
 // echo '<script type="text/javascript">jsFunction();</script>';
 //id
 
 $id = $_GET['id'];
 // Get products
 // $queryProducts = "SELECT * FROM team_played_for WHERE teamID like '$id' ";
-$queryProducts = "SELECT * FROM  player ,team_played_for  WHERE  player.playerID = team_played_for.playerID and teamID like '$id' ";
-$queryScouts = "SELECT * FROM scout ,team_worked_for WHERE scout.scoutID = team_worked_for.scoutID and teamID like '$id'";
-$statement = $db->prepare($queryProducts);
+
+$queryReport = "SELECT * FROM `reports`,player  WHERE reports.playerID = player.playerID and scoutID like '$id' ";
+$queryScouts = "SELECT scout_name FROM scout where scoutID like '$id' ";
+$statement = $db->prepare($queryReport);
 $statement2 = $db->prepare($queryScouts);
 $statement->execute();
 $statement2->execute();
-$products = $statement->fetchAll();
+$reports = $statement->fetchAll();
 $scouts = $statement2->fetchAll();
 $statement->closeCursor();
+$statement2->closeCursor();
 ?>
 <!doctype html>
 <html lang="en">
@@ -65,7 +70,11 @@ $statement->closeCursor();
 
     <main class="container mt-5">
         <h1 class='text-center'>
-            <?= $id ?>
+        <?php foreach ($scouts as $scout)?>
+            <p>
+              <?php echo $scout['scout_name']?>
+            </p>
+            
         </h1>
         <p>
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
@@ -81,17 +90,40 @@ $statement->closeCursor();
             <div class="row row-cols-1 row-cols-md-2 g-4">
 
 
-                <?php foreach ($products as $product): ?>
+                <?php
+                $count = 0;
+                foreach ($reports as $report): ?>
+
                     <div class="col">
+
                         <div class="card">
+                            <?php $count++; ?>
                             <!-- <img src="" class="card-img-top" alt="..."> -->
                             <div class="card-body">
                                 <h5 class="card-title">
-                                <a href="#" onclick="ContentPagePlayers('<?php echo $product['playerID']?>'); return false"  class="stretched-link"><?php echo $product['player_name']; ?></a>
+                                    <?php echo $report["player_name"] ?>
                                 </h5>
                                 <p class="card-text">
-                                    <?php echo $product['contract_start_year']; ?> -
-                                    <?php echo $product['contract_end_year']; ?>
+                                <h2>
+                                    <?php echo $report['season']; ?>
+                                </h2>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapse_<?= $count ?>" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        positives
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapse_<?= $count ?>"><?php echo $report['positives']; ?></div>
+
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseNegative_<?= $count ?>" aria-expanded="false"
+                                        aria-controls="collapseExample">
+                                        negatives
+                                    </button>
+                                </p>
+                                <div class="collapse" id="collapseNegative_<?= $count ?>"><?php echo $report['negatives']; ?></div>
                                 </p>
                             </div>
                         </div>
@@ -101,39 +133,9 @@ $statement->closeCursor();
             </div>
         </div>
 
-        <!-- collapse button for scouts -->
-        <p>
-            <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
-                aria-expanded="false" aria-controls="collapseExample">
-                Scouts
-            </button>
-        </p>
-
-         <!-- scouts for loop -->
-        <div class="collapse" id="collapseExample2">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
 
 
-                <?php foreach ($scouts as $scout): ?>
-                    <div class="col">
-                        <div class="card">
-                            <!-- <img src="" class="card-img-top" alt="..."> -->
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                <a href="#" onclick="ContentPageScouts('<?php echo $scout['scoutID']?>'); return false"  class="stretched-link"><?php echo $scout['scout_name']; ?></a>
 
-                                </h5>
-                                <p class="card-text">
-                                    <?php echo $scout['work_start_year']; ?> -
-                                    <?php echo $scout['work_end_year']; ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-
-            </div>
-        </div>
 
     </main><!-- /.container -->
     <script src="js/bootstrap.bundle.min.js"></script>

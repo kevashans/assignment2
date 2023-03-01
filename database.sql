@@ -2,6 +2,7 @@
 create table team(teamID VARCHAR(20) NOT NULL,
 team_name VARCHAR(50) NOT NULL,
 team_salary INT NOT NULL,
+picture_url varchar(350) NOT NULL,
 primary key(teamID));
 
 -- create player table
@@ -10,6 +11,7 @@ player_name VARCHAR(20) NOT NULL,
 player_birth_date DATE NOT NULL,
 position varchar(20) NOT NULL,
 player_draft_year YEAR(4) NOT NULL,
+player_picture varchar(350) NOT NULL,
 primary key(playerID));
 
 -- create scout table

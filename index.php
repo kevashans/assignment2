@@ -61,7 +61,7 @@ $statement->closeCursor();
 
 
 
-  <div class="test">helo</div>
+  <!-- <div class="test">helo</div> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -75,7 +75,7 @@ $statement->closeCursor();
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <div id="carouselExampleIndicators" class="carousel slide col-6" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide col-15" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>

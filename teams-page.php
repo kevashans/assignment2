@@ -1,10 +1,18 @@
-
 <?php
 require_once('database.php');
 // echo '<script type="text/javascript">jsFunction();</script>';
+$search = null;
+if(!empty($_GET['search'])){
+  $search = $_GET['search'];
+}
 
+$queryProducts = null;
 // Get products
-$queryProducts = 'SELECT * FROM team';
+if($search != "undefined"){
+$queryProducts = "SELECT * FROM team where team_name like '%$search%'";}
+else{
+  $queryProducts = "SELECT * FROM team where team_name like '%$search%'";
+}
 $statement = $db->prepare($queryProducts);
 $statement->execute();
 $products = $statement->fetchAll();
@@ -28,7 +36,6 @@ $statement->closeCursor();
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
     <div class="container">
       <a class="navbar-brand" href="index.php">Site Title</a>
@@ -58,28 +65,34 @@ $statement->closeCursor();
   </nav>
 
   <main class="container mt-5">
-    <div class="starter-template text-center">
+
+    <input id="search_input" type="text" placeholder="Search..." >
+    <button onclick="searchTeam('search_input')">Search</button>
+
+    <div id="search results">
+      <div class="starter-template text-center">
 
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
 
 
-        <?php foreach ($products as $product): ?>
-          <div class="col">
-            <div class="card">
-              <img src="<?php echo $product["picture_url"] ?>" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <a href="#" onclick="ContentPage('<?php echo $product['teamID']?>'); return false" value='<?php echo $product["teamID"] ?>' class="stretched-link"><?php echo $product['team_name']; ?></a>
-                </h5>
-                <p class="card-text">
-                  <?php echo $product['team_salary']; ?>
-                </p>
+          <?php foreach ($products as $product): ?>
+            <div class="col">
+              <div class="card">
+                <img src="<?php echo $product["picture_url"] ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="#" onclick="ContentPage('<?php echo $product['teamID'] ?>'); return false"
+                      value='<?php echo $product["teamID"] ?>' class="stretched-link"><?php echo $product['team_name']; ?></a>
+                  </h5>
+                  <p class="card-text">
+                    <?php echo $product['team_salary']; ?>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        <?php endforeach; ?>
-
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
 

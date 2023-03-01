@@ -43,6 +43,9 @@
 			<label for="birthday">Birthday:</label>
 			<input type="date" name="birthday">
 		</P>
+
+
+		
 		<input type="submit" value="Submit"><br>
 	</form>
 
