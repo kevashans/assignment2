@@ -67,6 +67,7 @@ $statement2->closeCursor();
             </div>
         </div>
     </nav>
+    
 
     <main class="container mt-5">
         <h1 class='text-center'>
@@ -74,10 +75,16 @@ $statement2->closeCursor();
             <p>
               <?php echo $Player['player_name']?>
             </p>
-            
+
         </h1>
+
+        <select name="cars" id="cars">
+                <?php foreach ($contracts as $contract): ?>
+                    <option value="<?php echo $contract['contract_start_year'];?>"><?php echo $contract['contract_start_year'];?></option>
+                 <?php endforeach; ?>
+        </select>        
         <p>
-            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            <button class="btn btn-primary mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
                 Contracts
             </button>
@@ -88,7 +95,7 @@ $statement2->closeCursor();
 
         <div class="collapse" id="collapseExample">
             <div class="row row-cols-1 row-cols-md-2 g-4">
-
+                
 
                 <?php
                 $count = 0;
@@ -120,7 +127,8 @@ $statement2->closeCursor();
                         </div>
                     </div>
                 <?php endforeach; ?>
-
+                
+                
             </div>
         </div>
 

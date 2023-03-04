@@ -17,19 +17,32 @@
 			font-size: 12px;
 		}
 	</style>
+	<script type="text/javascript" src="./js/myFunctions.js"></script>
 </head>
-</head>
+
 
 <body>
 	<h1>Contact us</h1>
 	<form method="POST" name="contactform" action="contact-form-handler.php">
 		<p>
 			<label for='name'>Your Name:</label> <br>
-			<input type="text" name="name">
+
+			<input type="text" name="name" id="name" onkeyup="userValidation()" placeholder="John C Mather"><br>
+			<span id="uid_err"></span>
 		</p>
 		<p>
 			<label for='email'>Email Address:</label> <br>
-			<input type="text" name="email"> <br>
+			<input type="text" id="email" name="email" onkeyup="emailValidation()"> <br>
+			<span id="emailError"></span>
+		</p>
+		<p>
+			<label for='field'>Field:</label> <br>
+			<select name="field" id="field">
+				<option value="Complaint">Complaint</option>
+				<option value="Inquiry">Inquiry</option>
+				<option value="Requests">Requests</option>
+				<!-- <option value="audi">Audi</option> -->
+			</select>
 		</p>
 		<p>
 			<label for='message'>Message:</label> <br>
@@ -37,15 +50,16 @@
 		</p>
 		<p>
 			<label for="phone">Enter a phone number:</label><br><br>
-			<input type="tel" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+			<input type="tel" name="phone" id="phone" placeholder="123-45-6781" onkeyup="phoneValidation()" required>
+			<span id="phoneError"></span>
 		</p>
 		<P>
-			<label for="birthday">Birthday:</label>
+			<label for="birthday">DOB:</label>
 			<input type="date" name="birthday">
 		</P>
 
 
-		
+
 		<input type="submit" value="Submit"><br>
 	</form>
 

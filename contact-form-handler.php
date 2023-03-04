@@ -6,7 +6,8 @@ if(empty($_POST['name'])  ||
    empty($_POST['email']) ||
    empty($_POST['phone'])||
    empty($_POST['birthday'])||
-   empty($_POST['message']))
+   empty($_POST['message'])||
+   empty($_POST['field']))
 {
     $errors .= "\n Error: all fields are required";
 }
@@ -22,6 +23,7 @@ $email_address = $_POST['email'];
 $message = $_POST['message'];
 $phone = $_POST['phone'];
 $birthday = $_POST['birthday'];
+$field = $_POST['field'];
 
 
 if (!preg_match(
@@ -36,7 +38,7 @@ if( empty($errors))
         $to = $myemail;
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ".
-        " Here are the details:\n Name: $name \n Email: $email_address \n Message \n $message \n $phone \n $birthday";
+        " Here are the details:\n Name: $name \n Email: $email_address \n Field $field  \n Message \n $message \n $phone \n $birthday";
 
         mail($to,$email_subject,$email_body,$headers);
         //redirect to the 'thank you' page

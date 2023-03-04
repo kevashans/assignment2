@@ -1,10 +1,19 @@
 
 <?php
 require_once('database.php');
+$search = null;
+if(!empty($_GET['search'])){
+  $search = $_GET['search'];
+}
+$queryPlayers = null;
 // echo '<script type="text/javascript">jsFunction();</script>';
-
+if($search != "undefined"){
+  $queryPlayers = "SELECT * FROM player where player_name like '%$search%'";}
+  else{
+    $queryPlayers = "SELECT * FROM player where player_name like '%$search%'";
+  }
 // Get products
-$queryPlayers = 'SELECT * FROM player';
+// $queryPlayers = 'SELECT * FROM player';
 $statement = $db->prepare($queryPlayers);
 $statement->execute();
 $players = $statement->fetchAll();
@@ -58,6 +67,11 @@ $statement->closeCursor();
   </nav>
 
   <main class="container mt-5">
+
+  <input id="search_input" type="text" placeholder="Search..." >
+    <button onclick="searchPlayer('search_input')">Search</button>
+
+    <div id="search results">
     <div class="starter-template text-center">
 
 
