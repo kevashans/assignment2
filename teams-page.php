@@ -36,7 +36,7 @@ $statement->closeCursor();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mont-bold" aria-label="Eighth navbar example">
+  <nav class="navbar navbar-expand-md navbar-light bg-light mont-bold" aria-label="Eighth navbar example">
     <div class="container">
       <a class="navbar-brand" href="index.php">Site Title</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -66,11 +66,11 @@ $statement->closeCursor();
 
   <main class="container mt-5">
 
-    <input id="search_input" type="text" placeholder="Search..." >
-    <button onclick="searchTeam('search_input')">Search</button>
+    <input id="search_input" type="text" placeholder="Search..." class="form-control rounded" >
+    <button onclick="searchTeam('search_input')" class="btn btn-outline-primary mt-2"  >Search</button>
 
     <div id="search results">
-      <div class="starter-template text-center">
+      <div class="starter-template text-center mt-3">
 
 
         <div class="row row-cols-1 row-cols-md-2 g-4">

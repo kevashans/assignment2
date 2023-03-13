@@ -10,17 +10,6 @@ require_once('database.php');
 
 
 
-$errors = '';
-$myemail = 'D00251772@student.dkit.ie';// <-----Put your DkIT email address here.
-if(empty($_POST['ID'])  ||
-   empty($_POST['name']) ||
-   empty($_POST['position'])||
-   empty($_POST['draft'])||
-   empty($_POST['DOB']))
-{
-    $errors .= "\n Error: all fields are required";
-}
-
 // Important: Create email headers to avoid spam folder
 
 
@@ -29,8 +18,9 @@ $name = $_POST['name'];
 $position = $_POST['position'];
 $draft = $_POST['draft'];
 $DOB = $_POST['DOB'];
+$picture = $_POST['picture'];
 
-$sqlQuery = "INSERT INTO player VALUES ('$ID', '$name', '$position', '$draft', '$DOB')";
+$sqlQuery = "INSERT INTO player VALUES ('$ID', '$name', '$DOB', '$position', '$draft','$picture')";
 
 // if(mysqli_query($db, $sqlQuery)){
 //     echo "<h3>data stored in a database successfully."
@@ -44,8 +34,10 @@ $sqlQuery = "INSERT INTO player VALUES ('$ID', '$name', '$position', '$draft', '
 $statement = $db->prepare($sqlQuery);
 if($statement->execute()){
     header('Location: add-succesful.php');
+}else{
+    
 }
-$statement->closeCursor();
+// $statement->closeCursor();
 // if (!preg_match(
 // "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
 // $email_address))

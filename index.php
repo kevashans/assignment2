@@ -33,9 +33,9 @@ $statement->closeCursor();
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-index nav-opacity mont-bold" aria-label="Eighth navbar example">
+  <nav class="navbar navbar-expand-md mont-bold nav-opacity" aria-label="Eighth navbar example">
     <div class="container ">
-      <a class="navbar-brand " href="index.php">Site Title</a>
+      <a class="navbar-brand" href="index.php">Site Title</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
         aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -63,8 +63,6 @@ $statement->closeCursor();
 
 
 
-
-
   <!-- <div class="test">helo</div> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -79,7 +77,7 @@ $statement->closeCursor();
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
-  <div id="carouselExampleIndicators" class="carousel slide mont" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide  mont" data-ride="carousel">
 
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

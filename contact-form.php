@@ -42,11 +42,11 @@
 					<span id="emailError"></span>
 				</p>
 				<p>
-					<label for='email'>Address:</label> <br>
+					<label for='email'>Address:</label> <span id="eircodeError"></span> <br>
 					<input type="text" id="address1" name="address1" placeholder="Adress Line 1" required> <br>
 					<input type="text" id="address2" name="address2" placeholder="Address Line 2" required> <br>
 					<input type="text" id="city" name="city" placeholder="City" requried>
-					<input type="text" id="eirCode" placeholder="Zip Code" name="eirCode" required>
+					<input type="text" id="eirCode" onkeyup="eircodeValidation()" placeholder="Zip Code" name="eirCode" required>
 
 
 				</p>

@@ -32,6 +32,10 @@
 			<input type="text" name="name"> <br>
 		</p>
 		<p>
+			<label for='picture'>Picture:</label> <br>
+			<input type="text" name="picture"> <br>
+		</p>
+		<p>
 			<label for='position'>Player Position:</label> <br>
 			<input type="text" name="position">
 		</p>
