@@ -21,21 +21,20 @@ function searchTeam(input) {
     // Declare variables
     var p =document.getElementById(input).value
     location.href = "players-page.php?search="+p;
-//    console.log(p)
+
   }
 
   function searchScout(input) {
     // Declare variables
     var p =document.getElementById(input).value
     location.href = "players-page.php?search="+p;
-//    console.log(p)
   }
 
   function filter(input) {
     // Declare variables
     var p =document.getElementById(input).value
     location.href = "players-page.php?search="+p;
-//    console.log(p)
+
   }
   function userValidation(){
     'use strict';
@@ -88,3 +87,21 @@ function searchTeam(input) {
         document.getElementById('phoneError').style.color = "#00AF33";
     }
   }
+
+  function BirthDayValidation(){
+    'use strict';
+    var birthday = document.getElementById("birthday");
+    var date = document.getElementById("birthday").value;
+    var date_length = date.length;
+    if (date_length == 0) {
+        document.getElementById('birthdayError').innerHTML = 'Please select a date';
+        birthday.focus();
+        document.getElementById('birthdayError').style.color = "#FF0000";
+    }
+    else {
+        document.getElementById('birthdayError').innerHTML = 'Valid phone number';
+        document.getElementById('birthdayError').style.color = "#00AF33";
+    }
+  }
+
+  

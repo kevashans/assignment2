@@ -1,17 +1,26 @@
-
 <?php
 require_once('database.php');
 $search = null;
-if(!empty($_GET['search'])){
-  $search = $_GET['search'];
+$position = null;
+if (isset($_POST['search'])) {
+  $search = $_POST['search'];
 }
+if (isset($_POST['position'])) {
+  $position = $_POST['position'];
+}
+
 $queryPlayers = null;
 // echo '<script type="text/javascript">jsFunction();</script>';
-if($search != "undefined"){
-  $queryPlayers = "SELECT * FROM player where player_name like '%$search%'";}
-  else{
-    $queryPlayers = "SELECT * FROM player where player_name like '%$search%'";
+if ($search != "undefined") {
+  $queryPlayers = "SELECT * FROM player where player_name like '%$search%'";
+  if($position != "undefined"){
+    $queryPlayers = "SELECT * FROM player where player_name like '%$search%' and position like '%$position%'";
+  
   }
+} 
+else {
+  $queryPlayers = "SELECT * FROM player";
+}
 // Get products
 // $queryPlayers = 'SELECT * FROM player';
 $statement = $db->prepare($queryPlayers);
@@ -37,8 +46,9 @@ $statement->closeCursor();
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+<?php echo $position?>
+<?php echo $search?>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mont-bold" aria-label="Eighth navbar example">
     <div class="container">
       <a class="navbar-brand" href="index.php">Site Title</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -68,34 +78,50 @@ $statement->closeCursor();
 
   <main class="container mt-5">
 
-  <input id="search_input" type="text" placeholder="Search..." >
-    <button onclick="searchPlayer('search_input')">Search</button>
-
-    <div id="search results">
-    <div class="starter-template text-center">
+    <form method="POST" id="form">
+      <input id="search" type="text" name="search" placeholder="Search..." class="form-control rounded">
 
 
-      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <select name="position" id="position" class="btn btn-primary dropdown-toggle mt-2">
+        <option value="PG">PG</option>
+        <option value="SG">SG</option>
+        <option value="SF">SF</option>
+        <option value="PF">PF</option>
+        <option value="C">C</option>
+      </select>
+      <br>
+
+      <input  class="btn btn-outline-primary mt-2"  type="submit" value="Search"></>
+      
+    </form>
+
+    <div id="search results mt-3">
+      <div class="starter-template text-center mt-3 ">
 
 
-        <?php foreach ($players as $player): ?>
-          <div class="col">
-            <div class="card">
-              <img src="<?php echo $player["player_picture"] ?>" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">
-                  <a href="#" onclick="ContentPagePlayers('<?php echo $player['playerID']?>'); return false" class="stretched-link"><?php echo $player['player_name']; ?></a>
-                </h5>
-                <p class="card-text">
-                  <?php echo $player['position']; ?>
-                </p>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+
+
+          <?php foreach ($players as $player): ?>
+            <div class="col">
+              <div class="card">
+                <img src="<?php echo $player["player_picture"] ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="#" onclick="ContentPagePlayers('<?php echo $player['playerID'] ?>'); return false"
+                      class="stretched-link text-decoration-none"><?php echo $player['player_name']; ?></a>
+                  </h5>
+                  <p class="card-text">
+                    <?php echo $player['position']; ?>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        <?php endforeach; ?>
+          <?php endforeach; ?>
 
+        </div>
       </div>
-    </div>
 
   </main><!-- /.container -->
   <script src="js/bootstrap.bundle.min.js"></script>

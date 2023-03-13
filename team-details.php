@@ -35,7 +35,7 @@ $statement->closeCursor();
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mont-bold" aria-label="Eighth navbar example">
         <div class="container">
             <a class="navbar-brand" href="index.php">Site Title</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
@@ -86,8 +86,8 @@ $statement->closeCursor();
                         <div class="card">
                             <!-- <img src="" class="card-img-top" alt="..."> -->
                             <div class="card-body">
-                                <h5 class="card-title">
-                                <a href="#" onclick="ContentPagePlayers('<?php echo $product['playerID']?>'); return false"  class="stretched-link"><?php echo $product['player_name']; ?></a>
+                                <h5 class="card-title ">
+                                <a href="#" class="text-decoration-none"   onclick="ContentPagePlayers('<?php echo $product['playerID']?>'); return false" ><?php echo $product['player_name']; ?></a>
                                 </h5>
                                 <p class="card-text">
                                     <?php echo $product['contract_start_year']; ?> -
@@ -120,7 +120,7 @@ $statement->closeCursor();
                             <!-- <img src="" class="card-img-top" alt="..."> -->
                             <div class="card-body">
                                 <h5 class="card-title">
-                                <a href="#" onclick="ContentPageScouts('<?php echo $scout['scoutID']?>'); return false"  class="stretched-link"><?php echo $scout['scout_name']; ?></a>
+                                <a href="#" class="text-decoration-none"  onclick="ContentPageScouts('<?php echo $scout['scoutID']?>'); return false"  class="stretched-link"><?php echo $scout['scout_name']; ?></a>
 
                                 </h5>
                                 <p class="card-text">

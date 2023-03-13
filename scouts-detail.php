@@ -40,7 +40,7 @@ $statement2->closeCursor();
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mont-bold" aria-label="Eighth navbar example">
         <div class="container">
             <a class="navbar-brand" href="index.php">Site Title</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"

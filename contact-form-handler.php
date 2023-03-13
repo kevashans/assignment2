@@ -7,7 +7,11 @@ if(empty($_POST['name'])  ||
    empty($_POST['phone'])||
    empty($_POST['birthday'])||
    empty($_POST['message'])||
-   empty($_POST['field']))
+   empty($_POST['field'])||
+   empty($_POST['address1'])||
+   empty($_POST['address2'])||
+   empty($_POST['city'])||
+   empty($_POST['eirCode']))
 {
     $errors .= "\n Error: all fields are required";
 }
