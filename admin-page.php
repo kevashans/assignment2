@@ -9,16 +9,36 @@ require_once('database.php');
 // $id = $_GET['id'];
 // Get products
 // $queryProducts = "SELECT * FROM team_played_for WHERE teamID like '$id' ";
+$deletePlayer = null;
+if (isset($_GET['delete'])) {
+    $deletePlayer = $_GET['delete'];
+    $queryDelete = "DELETE FROM player WHERE playerID like '%$deletePlayer%'";
+    $statement = $db->prepare($queryDelete);
+    $statement->execute();
+    $statement->closeCursor();
 
+}
+$reportPlayer = null;
+$reportScout = null;
+if (isset($_GET['deletePlayer']) and isset($_GET['deleteScout'])) {
+    $reportPlayer = $_GET['deletePlayer'];
+    $reportScout= $_GET['deleteScout'];
+
+    $queryDelete = "DELETE FROM reports WHERE playerID like '%$reportPlayer%' and scoutID like '%$reportScout%'";
+    $statement = $db->prepare($queryDelete);
+    $statement->execute();
+    $statement->closeCursor();
+
+}
 
 $queryContracts = "SELECT * FROM player";
-$queryPlayer = "SELECT * from scout ";
+$queryReport = "SELECT * from reports";
 $statement = $db->prepare($queryContracts);
-$statement2 = $db->prepare($queryPlayer);
+$statement2 = $db->prepare($queryReport);
 $statement->execute();
 $statement2->execute();
 $contracts = $statement->fetchAll();
-$Players = $statement2->fetchAll();
+$reports = $statement2->fetchAll();
 $statement->closeCursor();
 $statement2->closeCursor();
 ?>
@@ -35,7 +55,7 @@ $statement2->closeCursor();
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="mystyle.css" rel="stylesheet">
+    <!-- <link href="mystyle.css" rel="stylesheet"> -->
     <script type="text/javascript" src="./js/myFunctions.js"></script>
 </head>
 
@@ -45,6 +65,7 @@ $statement2->closeCursor();
     <!-- players for loop -->
 
 
+    <a type="button" class="btn btn-primary" href="./add.php">Add Player</a>
 
     <table class="table">
         <thead>
@@ -61,6 +82,8 @@ $statement2->closeCursor();
         </thead>
         <?php
         $count = 0;
+
+        //PLAYERS
         foreach ($contracts as $contract): ?>
 
             <tr>
@@ -82,20 +105,67 @@ $statement2->closeCursor();
                 <td>
                     <?php echo $contract['player_picture'] ?>
                 </td>
+                <td>
+                    <button onclick="DeletePlayer('<?php echo $contract['playerID'] ?>')">DELETE</button>
+                </td>
 
             </tr>
         <?php endforeach; ?>
 
-
-        </div>
-        </div>
-        <a type="button" class="btn btn-primary" href="./add.php">Add</a>
+    </table>
 
 
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">PlayerId</th>
+                <th scope="col">ScoutId</th>
+                <th scope="col">season</th>
+                <th scope="col">Positives</th>
+                <th scope="col">Negatives</th>
+                
+
+            </tr>
+        </thead>
+        <?php
+        $count = 0;
+
+        //PLAYERS
+        foreach ($reports as $report): ?>
+
+            <tr>
+                <th scope="row">
+                    <?php echo $report['playerID'] ?>
+                </th>
+                <td>
+                    <?php echo $report['scoutID'] ?>
+                </td>
+                <td>
+                    <?php echo $report['season'] ?>
+                </td>
+                <td>
+                    <?php echo $report['positives'] ?>
+                </td>
+                <td>
+                    <?php echo $report['negatives'] ?>
+                </td>
+                <td>
+                    <button onclick="DeleteReport('<?php echo $report['playerID'] ?>', '<?php echo $report['scoutID'] ?>')">DELETE</button>
+                </td>
+
+            </tr>
+        <?php endforeach; ?>
+
+    </table>
+
+    </div>
+    </div>
 
 
-        </main><!-- /.container -->
-        <script src="js/bootstrap.bundle.min.js"></script>
+
+
+    </main><!-- /.container -->
+    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

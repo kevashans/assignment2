@@ -33,92 +33,66 @@ $statement->closeCursor();
 
 <body>
 
-  <nav class="navbar navbar-expand-md mont-bold nav-opacity" aria-label="Eighth navbar example">
-    <div class="container ">
-      <a class="navbar-brand" href="index.php">Site Title</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
-        aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample07">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        </ul>
-        <span class="d-flex">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="players-page.php">Players</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact-form.php">Contact-form</a>
-            </li>
-          </ul>
-        </span>
-      </div>
-    </div>
-  </nav>
 
 
 
   <!-- <div class="test">helo</div> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <div class="bgimage">
+    
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+      <!-- <div class="leftmenu">
+                <h4> NICK </h4>
+            </div> -->
 
-  <div id="carouselExampleIndicators" class="carousel slide  mont" data-ride="carousel">
+      <nav class="navbar navbar-expand-md mont-bold nav-opacity" aria-label="Eighth navbar example">
+        <div class="container ">
+          <a class="navbar-brand" href="index.php">NBDATA</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
+            aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
+          <div class="collapse navbar-collapse" id="navbarsExample07">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <span class="d-flex">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="players-page.php">Players</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="contact-form.php">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="Login.php"><img class="logo" src="./img/user.png"></img></a>
+                </li>
 
-      <div class="carousel-item active">
-        <img class="d-block"
-          src="https://img3.wallspic.com/previews/7/4/9/7/3/137947/137947-football_player-basketball_player-sports-illustration-graphic_design-x750.jpg"
-          alt="First slide">
-        <div class="carousel-caption d-none d-md-block my-caption">
-          <h5>Find Players</h5>
+              </ul>
+            </span>
+          </div>
         </div>
-        <!-- <div>
-            <h5 class="my-caption">test</div> -->
-      </div>
-      <div class="carousel-item">
-        <img class="d-block" src="https://img2.goodfon.com/original/1920x1080/9/89/jeff-green-dzheff-grin-boston.jpg"
-          alt="Second slide">
-      </div>
-      <div class="carousel-item">
-        <img class="d-block" src="./img/donovan.jpg" alt="Third slide">
-      </div>
+      </nav>
+
+
+    
+    <div class="text">
+      <h2>NBDATA</h2>
+      <h3> Explore Our Nba Scouting Database </h3>
+      <a href="players-page.php"><button class="btn btn-primary"> Players</button></a>
+      <a href ="teams-page.php"><button class="btn btn-primary"> Teams</button></a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+
   </div>
 
   <main class="container mont">
 
     <!------ Include the above in your HEAD tag ---------->
 
-    <div class="how-section1 mt-5">
+    <!-- <div class="how-section1 mt-5">
       <div class="row">
         <div class="col-md-6 how-img">
           <img src="https://image.ibb.co/dDW27U/Work_Section2_freelance_img1.png" class="rounded-circle img-fluid"
@@ -140,7 +114,7 @@ $statement->closeCursor();
         </div>
       </div>
 
-    </div>
+    </div> -->
 
   </main><!-- /.container -->
   <script src="js/bootstrap.bundle.min.js"></script>

@@ -13,12 +13,11 @@ $queryPlayers = null;
 // echo '<script type="text/javascript">jsFunction();</script>';
 if ($search != "undefined") {
   $queryPlayers = "SELECT * FROM player where player_name like '%$search%'";
-  if($position != "undefined"){
+  if ($position != "undefined") {
     $queryPlayers = "SELECT * FROM player where player_name like '%$search%' and position like '%$position%'";
-  
+
   }
-} 
-else {
+} else {
   $queryPlayers = "SELECT * FROM player";
 }
 // Get products
@@ -46,11 +45,11 @@ $statement->closeCursor();
 </head>
 
 <body>
-<?php echo $position?>
-<?php echo $search?>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mont-bold navbar-expand-md" aria-label="Eighth navbar example">
-    <div class="container">
-      <a class="navbar-brand" href="index.php">Site Title</a>
+  <?php echo $position ?>
+  <?php echo $search ?>
+  <nav class="navbar navbar-expand-md mont-bold nav-opacity" aria-label="Eighth navbar example">
+    <div class="container ">
+      <a class="navbar-brand" href="index.php">NBDATA</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
         aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -68,8 +67,12 @@ $statement->closeCursor();
               <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact-form.php">Contact-form</a>
+              <a class="nav-link" aria-current="page" href="contact-form.php">Contact Us</a>
             </li>
+            <li class="nav-item">
+              <a href="Login.php"><img class="logo" src="./img/user.png"></img></a>
+            </li>
+
           </ul>
         </span>
       </div>
@@ -92,8 +95,8 @@ $statement->closeCursor();
       </select>
       <br>
 
-      <input  class="btn btn-outline-primary mt-2"  type="submit" value="Search"></>
-      
+      <input class="btn btn-outline-primary mt-2" type="submit" value="Search"></>
+
     </form>
 
     <div id="search results mt-3">

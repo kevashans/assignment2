@@ -1,69 +1,88 @@
 @font-face {
-    font-family: Monstserrat;
-    src: url('./font/Montserrat-Medium.ttf');
+  font-family: Monstserrat;
+  src: url('./font/Montserrat-Medium.ttf');
 }
 
 @font-face {
-    font-family: Monstserrat-bold;
-    src: url('./font/Montserrat-Bold.ttf');
+  font-family: Monstserrat-bold;
+  src: url('./font/Montserrat-Bold.ttf');
+}
+
+.carousel-caption {
+  /* position: absolute; */
+  top: 300px;
+  margin-left: -450px;
+  color: black;
+  padding: 0px;
+  font-size: 2em;
+  
+}
+
+
+.logo {
+  width: 40px;
+  height: 40px;
 }
 
 
 body {
-    font-family: Monstserrat;
+  font-family: Monstserrat;
 }
 
 .mont {
-    font-family: Monstserrat;
+  font-family: Monstserrat;
 }
-.mont-bold{
-    font-family: Monstserrat-bold;
+
+.mont-bold {
+  font-family: Monstserrat-bold;
 }
 
 
 
 .nav-link {
-    color: rgb(29, 66, 138) !important;
+  color: rgb(29, 66, 138) !important;
 }
 
-.navbar-brand{
-    color: rgb(200, 16, 46) !important;
+.navbar-brand {
+  color: rgb(200, 16, 46) !important;
 }
-.nba-red{
-    background-color: rgb(200, 16, 46) !important;
+
+.nba-red {
+  background-color: rgb(200, 16, 46) !important;
 }
+
 /* Add your own CSS under here */
 .carousel-item img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .navbar-custom {
-    background-color: rgb(29, 66, 138);
+  background-color: rgb(29, 66, 138);
 }
 
 .navbar-index {
-    margin-bottom: -60px;
-    z-index: 4;
+  margin-bottom: -60px;
+  z-index: 4;
 }
 
 body {
-    /* margin-top: 100px;
+  /* margin-top: 100px;
     color: green; */
-    /* background-color: grey; */
+  /* background-color: grey; */
 }
 
 .test {
-    color: blue;
-    background-color: black;
+  color: blue;
+  background-color: black;
 }
 
 .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23C9082A' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23C9082A' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
 }
 
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23C9082A' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23C9082A' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
 }
 
 /* .my-caption{
@@ -84,14 +103,14 @@ body {
     color: green;
 } */
 .carousel {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 .card-img-top {
-    width: 100%;
-    height: 20vw;
-    object-fit: cover;
+  width: 100%;
+  height: 20vw;
+  object-fit: cover;
 }
 
 /* body {
@@ -100,98 +119,276 @@ body {
 } */
 
 .carousel img {
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 550px;
-    max-height: 550px;
-    width: auto;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 550px;
+  max-height: 550px;
+  width: auto;
 }
 
 
 
 /* forms */
 .register-photo {
-    background: #f1f7fc;
-    padding: 80px 0;
-  }
-  
-  .register-photo .image-holder {
-    display: table-cell;
-    width: auto;
-    background: url(https://pbs.twimg.com/media/Dz3Ghd2WwAAvdh7?format=jpg&name=large);
-    background-size: cover;
-  }
-  
-  .register-photo .form-container {
-    display: table;
-    max-width: 900px;
-    width: 90%;
-    margin: 0 auto;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-  }
-  
+  background: #f1f7fc;
+  padding: 80px 0;
+}
+
+.register-photo .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url(https://pbs.twimg.com/media/Dz3Ghd2WwAAvdh7?format=jpg&name=large);
+  background-size: cover;
+}
+
+.register-photo .form-container {
+  display: table;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-photo form {
+  display: table-cell;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  color: #505e6c;
+}
+
+@media (max-width:991px) {
   .register-photo form {
-    display: table-cell;
-    width: 400px;
-    background-color: #ffffff;
-    padding: 40px 60px;
-    color: #505e6c;
+    padding: 40px;
   }
-  
-  @media (max-width:991px) {
-    .register-photo form {
-      padding: 40px;
-    }
-  }
-  
-  .register-photo form h2 {
-    font-size: 24px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-  }
-  
-  .register-photo form .form-control {
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #dfe7f1;
-    border-radius: 0;
-    box-shadow: none;
-    outline: none;
-    color: inherit;
-    text-indent: 0px;
-    height: 40px;
-  }
-  
-  .register-photo form .form-check {
-    font-size: 13px;
-    line-height: 20px;
-  }
-  
-  .register-photo form .btn-primary {
-    background: green;
-    border: none;
-    border-radius: 4px;
-    padding: 11px;
-    box-shadow: none;
-    margin-top: 35px;
-    text-shadow: none;
-    outline: none !important;
-  }
-  
-  .register-photo form .btn-primary:hover, .register-photo form .btn-primary:active {
-    background: green;
-  }
-  
-  .register-photo form .btn-primary:active {
-    transform: translateY(1px);
-  }
-  
-  .register-photo form .already {
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: #6f7a85;
-    opacity: 0.9;
-    text-decoration: none;
-  }
+}
+
+.register-photo form h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.register-photo form .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 0px;
+  height: 40px;
+}
+
+.register-photo form .form-check {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.register-photo form .btn-primary {
+  background: green;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.register-photo form .btn-primary:hover,
+.register-photo form .btn-primary:active {
+  background: green;
+}
+
+.register-photo form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.register-photo form .already {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+
+/* index */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+.bgimage{
+  background: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),url("https://images.unsplash.com/photo-1615174438196-b3538fe68737?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80");
+  background-size: 100%;
+  width: 100%;
+  height: 100vh;
+}
+.menu{
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.leftmenu{
+  width: 20%;
+  line-height: 100Px;
+  float: left;
+}
+.leftmenu h4{
+  padding-left: 70px;
+  font-weight: bold;
+  color: white;
+  font-size: 22px;
+  font-family: Monstserrat;
+}
+.rightmenu{
+  width: 60%;
+  height: 100Px;
+  float: right;
+}
+.rightmenu ul{
+  margin-left: 200px;
+}
+.rightmenu ul li{
+  display: inline-block;
+  font-family: Monstserrat;
+  list-style: none;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+  line-height: 100px;
+  margin-left: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.rightmenu ul li:hover{
+  color: #00ccff;
+}
+#firstlist{
+ color: #00ccff; 
+}
+.text{
+  width: 100%;
+  margin-top:185px ;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+
+}
+.text h4{
+  font-size: 14px;
+  font-family: Monstserrat;
+}
+.text h1{
+  font-size: 62px;
+  font-family: Monstserrat ;
+  font-weight: 700px;
+  margin: 14px 0px;
+}
+.text h3{
+  font-size: 15px;
+  font-family: Monstserrat;
+}
+/* .btn{
+  background-color: rgba(255,255,255, 0.164);
+  color: white;
+  font-family: Monstserrat;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 40px;
+  width: 150px;
+  margin-top: 25px;
+  border: 3px solid black;
+  cursor: pointer;
+} */
+/* .btn:hover{
+  background-color: black;
+  color: black;
+} */
+/* SOURCE : coding with nick */ 
+
+/* loginpage */
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+header .header{
+  background-color: #fff;
+  height: 45px;
+}
+header a img{
+  width: 134px;
+margin-top: 4px;
+}
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.login-page .form .login{
+  margin-top: -31px;
+margin-bottom: 26px;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+/* .container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+} */
+
+/* body {
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,#328f8a,#08ac4b);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */

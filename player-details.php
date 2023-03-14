@@ -40,9 +40,9 @@ $statement2->closeCursor();
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light mont-bold" aria-label="Eighth navbar example">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">Site Title</a>
+    <nav class="navbar navbar-expand-md mont-bold nav-opacity" aria-label="Eighth navbar example">
+        <div class="container ">
+            <a class="navbar-brand" href="index.php">NBDATA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
                 aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -60,32 +60,36 @@ $statement2->closeCursor();
                             <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="contact-form.php">Contact-form</a>
+                            <a class="nav-link" aria-current="page" href="contact-form.php">Contact Us</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="Login.php"><img class="logo" src="./img/user.png"></img></a>
+                        </li>
+
                     </ul>
                 </span>
             </div>
         </div>
     </nav>
-    
+
 
     <main class="container mt-5">
         <h1 class='text-center'>
-        <?php foreach ($Players as $Player)?>
+            <?php foreach ($Players as $Player) ?>
             <p>
-              <?php echo $Player['player_name']?>
+                <?php echo $Player['player_name'] ?>
             </p>
 
         </h1>
 
         <select name="cars" id="cars">
-                <?php foreach ($contracts as $contract): ?>
-                    <option value="<?php echo $contract['contract_start_year'];?>"><?php echo $contract['contract_start_year'];?></option>
-                 <?php endforeach; ?>
-        </select>        
+            <?php foreach ($contracts as $contract): ?>
+                <option value="<?php echo $contract['contract_start_year']; ?>"><?php echo $contract['contract_start_year']; ?></option>
+            <?php endforeach; ?>
+        </select>
         <p>
-            <button class="btn btn-primary mt-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                aria-expanded="false" aria-controls="collapseExample">
+            <button class="btn btn-primary mt-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Contracts
             </button>
         </p>
@@ -95,11 +99,10 @@ $statement2->closeCursor();
 
         <div class="collapse" id="collapseExample">
             <div class="row row-cols-1 row-cols-md-2 g-4">
-                
+
 
                 <?php
-                $count = 0;
-                foreach ($contracts as $contract): ?>
+                $count = 0; foreach ($contracts as $contract): ?>
 
                     <div class="col">
 
@@ -108,27 +111,30 @@ $statement2->closeCursor();
                             <!-- <img src="" class="card-img-top" alt="..."> -->
                             <div class="card-body">
                                 <h5 class="card-title">
-                                <a href="#" onclick="ContentPage('<?php echo $contract['teamID']?>'); return false" class="stretched-link"><?php echo $contract['team_name']; ?></a>
+                                    <a href="#" onclick="ContentPage('<?php echo $contract['teamID'] ?>'); return false"
+                                        class="stretched-link"><?php echo $contract['team_name']; ?></a>
                                 </h5>
                                 <p class="card-text">
 
-                                <h6>  
-                                    <?php echo $contract['contract_start_year'];?> - <?php echo $contract['contract_end_year'];?><br>
-                                    Yearly salary : <?php echo $contract['contract_yearly_salary'];?>M
+                                <h6>
+                                    <?php echo $contract['contract_start_year']; ?> -
+                                    <?php echo $contract['contract_end_year']; ?><br>
+                                    Yearly salary :
+                                    <?php echo $contract['contract_yearly_salary']; ?>M
 
-                                
+
                                 </h6>
 
 
-                                
 
-                            </p>
+
+                                </p>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
-                
-                
+
+
             </div>
         </div>
 
@@ -141,5 +147,3 @@ $statement2->closeCursor();
 </body>
 
 </html>
-
-

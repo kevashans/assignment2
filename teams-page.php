@@ -2,15 +2,15 @@
 require_once('database.php');
 // echo '<script type="text/javascript">jsFunction();</script>';
 $search = null;
-if(!empty($_GET['search'])){
+if (!empty($_GET['search'])) {
   $search = $_GET['search'];
 }
 
 $queryProducts = null;
 // Get products
-if($search != "undefined"){
-$queryProducts = "SELECT * FROM team where team_name like '%$search%'";}
-else{
+if ($search != "undefined") {
+  $queryProducts = "SELECT * FROM team where team_name like '%$search%'";
+} else {
   $queryProducts = "SELECT * FROM team where team_name like '%$search%'";
 }
 $statement = $db->prepare($queryProducts);
@@ -36,9 +36,9 @@ $statement->closeCursor();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-light bg-light mont-bold" aria-label="Eighth navbar example">
-    <div class="container">
-      <a class="navbar-brand" href="index.php">Site Title</a>
+  <nav class="navbar navbar-expand-md mont-bold nav-opacity" aria-label="Eighth navbar example">
+    <div class="container ">
+      <a class="navbar-brand" href="index.php">NBDATA</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07"
         aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -56,18 +56,21 @@ $statement->closeCursor();
               <a class="nav-link" aria-current="page" href="teams-page.php">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="contact-form.php">Contact-form</a>
+              <a class="nav-link" aria-current="page" href="contact-form.php">Contact Us</a>
             </li>
+            <li class="nav-item">
+              <a href="Login.php"><img class="logo" src="./img/user.png"></img></a>
+            </li>
+
           </ul>
         </span>
       </div>
     </div>
   </nav>
-
   <main class="container mt-5">
 
-    <input id="search_input" type="text" placeholder="Search..." class="form-control rounded" >
-    <button onclick="searchTeam('search_input')" class="btn btn-outline-primary mt-2"  >Search</button>
+    <input id="search_input" type="text" placeholder="Search..." class="form-control rounded">
+    <button onclick="searchTeam('search_input')" class="btn btn-outline-primary mt-2">Search</button>
 
     <div id="search results">
       <div class="starter-template text-center mt-3">

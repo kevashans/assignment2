@@ -30,28 +30,42 @@
 			<div class="image-holder"></div>
 			<form method="POST" name="contactform" action="contact-form-handler.php" id="form" required>
 				<p>
-					<label for='name'>Your Name:</label> <br>
+					<label class="mont-bold" for='name'>Your Name:</label> <br>
 
 					<input type="text" name="name" id="name" onkeyup="userValidation()" placeholder="John C Mather"
 						required><br>
 					<span id="uid_err"></span>
 				</p>
 				<p>
-					<label for='email'>Email Address:</label> <br>
-					<input type="text" id="email" name="email" onkeyup="emailValidation()" required> <br>
-					<span id="emailError"></span>
+					<label class="mont-bold" for="phone">Enter a phone number:</label><br>
+					<input type="tel" name="phone" id="phone" placeholder="123-45-6781" onkeyup="phoneValidation()"
+						required>
+					<span id="phoneError"></span>
 				</p>
 				<p>
-					<label for='email'>Address:</label> <span id="eircodeError"></span> <br>
+					<label class="mont-bold" for='email'>Email Address:</label> <br>
+					<input type="text" id="email" name="email" placeholder="ABCD@gmail.com" onkeyup="emailValidation()" required> <br>
+					<span id="emailError"></span>
+				</p>
+
+				<P>
+					<label class="mont-bold" for="birthday">DOB:</label><br>
+					<input type="date" id="birthday" name="birthday" onsubmit="BirthDayValidation()" required>
+					<span id="birthdayError"></span>
+				</P>
+				<p>
+					<label class="mont-bold" for='email'>Address:</label> <br>
 					<input type="text" id="address1" name="address1" placeholder="Adress Line 1" required> <br>
 					<input type="text" id="address2" name="address2" placeholder="Address Line 2" required> <br>
 					<input type="text" id="city" name="city" placeholder="City" requried>
-					<input type="text" id="eirCode" onkeyup="eircodeValidation()" placeholder="Zip Code" name="eirCode" required>
+					<input type="text" id="eirCode" onkeyup="eircodeValidation()" placeholder="Zip Code" name="eirCode"
+						required><br>
+					<span id="eircodeError"></span>
 
 
 				</p>
 				<p>
-					<label for='field'>Field:</label> <br>
+					<label class="mont-bold" for='field'>Field:</label> <br>
 					<select name="field" id="field">
 						<option value="Complaint">Complaint</option>
 						<option value="Inquiry">Inquiry</option>
@@ -60,20 +74,12 @@
 					</select>
 				</p>
 				<p>
-					<label for='message'>Message:</label> <br>
-					<textarea name="message" required></textarea>
+					<label class="mont-bold" for='message'>Message:</label> <br>
+					<textarea name="message" cols="40" rows="10" required></textarea>
 				</p>
-				<p>
-					<label for="phone">Enter a phone number:</label><br><br>
-					<input type="tel" name="phone" id="phone" placeholder="123-45-6781" onkeyup="phoneValidation()"
-						required>
-					<span id="phoneError"></span>
-				</p>
-				<P>
-					<label for="birthday">DOB:</label>
-					<input type="date" id="birthday" name="birthday" onsubmit="BirthDayValidation()" required>
-					<span id="birthdayError"></span>
-				</P>
+
+
+
 
 
 

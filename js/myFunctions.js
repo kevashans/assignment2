@@ -12,6 +12,10 @@ function DeletePlayer(id) {
   location.href = "admin-page.php?delete=" + id;
 };
 
+function DeleteReport(playerId,scoutId) {
+  location.href = "admin-page.php?deletePlayer=" +playerId+"&deleteScout="+scoutId;
+};
+
 
 function searchTeam(input) {
   // Declare variables
