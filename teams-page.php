@@ -86,7 +86,7 @@ $statement->closeCursor();
                 <div class="card-body">
                   <h5 class="card-title">
                     <a href="#" onclick="ContentPage('<?php echo $product['teamID'] ?>'); return false"
-                      value='<?php echo $product["teamID"] ?>' class="stretched-link"><?php echo $product['team_name']; ?></a>
+                      value='<?php echo $product["teamID"] ?>' class="stretched-link text-decoration-none"><?php echo $product['team_name']; ?></a>
                   </h5>
                   <p class="card-text">
                     <?php echo $product['team_salary']; ?>

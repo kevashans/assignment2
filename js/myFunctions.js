@@ -113,19 +113,20 @@ function BirthDayValidation() {
 
 function eircodeValidation() {
   'use strict';
-  var phoneformat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  var phoneformat = /^[ACDEFHKNPRTVWXY]{1}[0-9]{1}[0-9W]{1}[\ \-]?[0-9ACDEFHKNPRTVWXY]{4}$/;
+
   var phone_name = document.getElementById("eirCode");
   var phone_value = document.getElementById("eirCode").value;
   var phone_length = phone_value.length;
   // console.log(phone_value.match(phoneformat))
-  // console.log(phone_value)
+  console.log(phone_value)
   if (!phone_value.match(phoneformat)) {
     document.getElementById('eircodeError').innerHTML = 'This is not a valid zip code.';
     phone_name.focus();
     document.getElementById('eircodeError').style.color = "#FF0000";
   }
   else {
-    document.getElementById('eircodeError').innerHTML = 'Valid phone number';
+    document.getElementById('eircodeError').innerHTML = 'ZipCode Valid';
     document.getElementById('eircodeError').style.color = "#00AF33";
   }
 }

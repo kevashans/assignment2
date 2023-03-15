@@ -112,7 +112,7 @@ $statement2->closeCursor();
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <a href="#" onclick="ContentPage('<?php echo $contract['teamID'] ?>'); return false"
-                                        class="stretched-link"><?php echo $contract['team_name']; ?></a>
+                                        class="stretched-link text-decoration-none"><?php echo $contract['team_name']; ?></a>
                                 </h5>
                                 <p class="card-text">
 

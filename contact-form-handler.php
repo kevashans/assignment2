@@ -31,7 +31,7 @@ $field = $_POST['field'];
 $address1 = $_POST['address1'];
 $address2 = $_POST['address2'];
 $city = $_POST['city'];
-$eircode = $_POST['eircode'];
+$eircode = $_POST['eirCode'];
 
 
 if (!preg_match(
@@ -46,7 +46,7 @@ if( empty($errors))
         $to = $myemail;
         $email_subject = "Contact form submission: $name";
         $email_body = "You have received a new message. ".
-        " Here are the details:\n Name: $name \n Email: $email_address \n Field: $field  \n Message: $message \n phone: $phone \nDOB: $birthday \nAddress: $address1,$address2,$city,$eircode";
+        " Here are the details:\n Name: $name \n Email: $email_address \n Field: $field  \n Message: $message \n phone: $phone \nDOB: $birthday \nAddress: $address1,$address2,$city,$eirCode";
 
         mail($to,$email_subject,$email_body,$headers);
         //redirect to the 'thank you' page
