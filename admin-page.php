@@ -66,6 +66,7 @@ $statement2->closeCursor();
 
 
     <a type="button" class="btn btn-primary" href="./add.php">Add Player</a>
+    <a type="button" class="btn btn-danger" href="./index.php">Quit</a>
 
     <table class="table">
         <thead>

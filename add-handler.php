@@ -33,7 +33,7 @@ $sqlQuery = "INSERT INTO player VALUES ('$ID', '$name', '$DOB', '$position', '$d
 // }
 $statement = $db->prepare($sqlQuery);
 if($statement->execute()){
-    header('Location: add-succesful.php');
+    header('Location: admin-page.php');
 }else{
     
 }

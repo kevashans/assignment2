@@ -89,7 +89,9 @@ $statement->closeCursor();
                       value='<?php echo $product["teamID"] ?>' class="stretched-link text-decoration-none"><?php echo $product['team_name']; ?></a>
                   </h5>
                   <p class="card-text">
-                    <?php echo $product['team_salary']; ?>
+                  <div class="mont-bold">Salary:</div>
+
+                  <?php echo $product['team_salary']; ?>
                   </p>
                 </div>
               </div>
